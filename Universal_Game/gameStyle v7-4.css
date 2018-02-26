@@ -1,0 +1,244 @@
+/************************************************************************************************************************
+Cascading Style Sheet for the main game.
+*************************************************************************************************************************
+---------------------------------------Body - the main area of the web page----------------------------------------------
+
+The background has been set to a file called "camo.jpg" that is stored in the same folder as all of the components
+for the game.
+The background has been set so that the background will not be repeated as tiles. This makes the background look
+nicer overall.
+The background has been set to be fixed into it's position, this means that when the user scrolls down the web page, 
+the background will scroll down with it.
+************************************************************************************************************************/
+			body {
+				background: url(camo.jpg);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+			
+/***********************************************************************************************************************
+--------------------------I - the label for the hyperlink which takes the player to the how to play page----------------
+
+The font has been set to Arial, however, if that font is not available, the font will be Verdana.
+***********************************************************************************************************************/
+			
+			i {
+				font-family: "Arial", "Verdana";
+			}
+			
+/**********************************************************************************************************************
+-----------------------------------------------H1 - the largest sized header-------------------------------------------
+
+The font has been set to Arial, however, if that font is not available, the font will be Verdana.
+The font size has been set to 50 pixels big.
+**********************************************************************************************************************/
+			
+			h1 {
+				font-family: "Arial", "Verdana";
+				font-size: 50px;
+			}
+			
+/*********************************************************************************************************************
+-------------------------------------------------P - the paragraph tag------------------------------------------------
+
+The font has been set to Arial, however, if that font is not available, the font will be Verdana.
+*********************************************************************************************************************/
+			
+			p {
+				font-family: "Arial", "Verdana"
+			}
+			
+/*********************************************************************************************************************
+--------------------------------The upgrade ids - any tag with an id of one of the upgrades---------------------------
+
+The text will be aligned to the centre of the web browser, no matter how big, or small, the web browser currently is,
+this is a dynamic setting, meaning that the position of the text will always stay in the middle.
+*********************************************************************************************************************/
+			
+			#obstacleCourse, #firingRange, #propaganda, #mediaCensorship, #invadeCountry {
+				text-align: centre;
+			}
+			
+/*********************************************************************************************************************
+-------------------------------The upgrades class - any tag with a class of "upgrades"--------------------------------
+
+The background colour will be set to a grey-green colour of the tag.
+A 2 pixel thick border is generated in the colour black (but is turned into a grey when the button is disabled), the
+border will be given a padding of 10 pixels high and 15 pixels wide. This has been implemented in order to to stop
+the elements from looking cluttered in the user interface.
+The program has been told that there are to be no text decorations, which will override default settings for html and
+Google.
+The format has been set to inline-block so that it does not attempt to overlap any other elements.
+There has to be a 5 pixel wide and 15 pixel high gap between an element with this tag and another element. This has
+has been implemented in order to stop the user interface of the game neat and easy on the eyes.
+The font size has been set to 16 pixels big so that the text is easy to read, yet it does not take up too much space
+on the window. 
+The pointer has been configured so that the traditional cursor will turn into the 'pointer' cursor model.
+When a condition, such as mouse hover, mouse click or button disabled is met, the tag will take 0.2 seconds in order
+to change the appearance based upon styling.
+The border-radius has been set to 8 pixels. This does not make the button look circular, but it simply rounds the
+edges, giving the buttons a slimmer and neater look.
+The button's width will always be 25% of the web browser's width. This is a dynamic value because the width will
+always be updating to the web browser's size, meaning that if you shrunk the web browser, the buttons would
+also shrink.
+*********************************************************************************************************************/
+			
+			.upgrades {
+				background-color: #aaaa55;
+				border: 2px solid #444422;
+				padding: 10px 15px;
+				text-decoration: none;
+				display: inline-block;
+				margin: 5px 15px;
+				font-size: 16px;
+				cursor: pointer;
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				border-radius: 8px;
+				width: 25%;
+			}
+			
+/*********************************************************************************************************************
+----------------------------The upgrades class, but when the mouse is hovering over them------------------------------
+
+The background colour will transform into a darker version of the grey-green colour that is visible when the mouse
+is not hovering over the element. When the button is disabled, the colour looks a little more transparent and
+greyer because of the change in opacity.
+The size of the element will be scaled upwards by 20% both horizontally and vertically.
+*********************************************************************************************************************/
+			
+			.upgrades:hover {
+			    background-color: #77773c;
+				-ms-transform: scale(1.2,1.2);
+				-webkit-transform: scale(1.2,1.2);
+				transform: scale(1.2,1.2);
+			}
+			
+/*********************************************************************************************************************
+--------------------------The upgrades class, but when the mouse has clicked on the element---------------------------
+
+The button will move 20 pixels across the y axis (downwards).
+The size of the element will be scaled upwards by 20% both horizontally and vertically.
+*********************************************************************************************************************/
+			
+			.upgrades:active {
+				transform: translateY(20px);
+				-ms-transform: scale(1.2,1.2);
+				-webkit-transform: scale(1.2,1.2);
+				transform: scale(1.2,1.2)
+			}
+			
+/*********************************************************************************************************************
+-------------------------------The upgrades class, but when the element is disabled-----------------------------------
+
+The opacity of the element is gradually transformed from 100% to 60%, this makes the button harder to see, as well as
+reducing the alpha value (the transparency) of the colours used within the element.
+The cursor is turned into the 'not-allowed' model.
+*********************************************************************************************************************/
+			
+			.upgrades:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
+			
+/*********************************************************************************************************************
+--------------------The clicker id - the id that is used for the button that gives you points-------------------------
+
+The clicker has been set so that there must be a 10px wide and 40 pixel high gap between the clicker element and 
+another element.
+Th background colour has been set so that it matches that of the background. This means that the edges of the button
+is not visible through the background.
+The button does not have a border so that the button does not look like it has an image on it, but is the image 
+itself.
+The pointer has been configured so that the traditional cursor will turn into the 'pointer' cursor model.
+The height of the button has been specifically set to 284 pixels, this is so that the image is not stretched/
+distorted.
+The width of the button has been specifically set to 155 pixels, this is so that the image is not stretched/distorted.
+When a condition, such as mouse hover, mouse click or button disabled is met, the tag will take 0.2 seconds in order
+to change the appearance based upon styling.
+*********************************************************************************************************************/
+			
+			#clicker {
+				margin: 10px 40px;
+				background-color: #aaaa55;
+				border: none;
+				cursor: pointer;
+				height: 284px;
+				width: 155px;
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2;
+			}
+			
+/*********************************************************************************************************************
+----------------------------------The clicker id, but when the mouse is clicking on it--------------------------------
+
+The button moves 15 pixels across the y axis (downwards).
+*********************************************************************************************************************/
+			
+			#clicker:active {
+				transform: translateY(15px);
+			}
+			
+/*********************************************************************************************************************
+------------------------------Label - used in order to designate text phrases to buttons/DIVs-------------------------
+
+The font of the label is set to be Verdana at a size of 16 pixels big.
+*********************************************************************************************************************/
+			
+			label {
+				font: 16px verdana;
+			}
+			
+/*********************************************************************************************************************
+-------------------The masterTooltip class - the universal styling for all of the pop-up tool tips--------------------
+
+The tool tip will not be visible when the page is first loaded.
+The background colour of the tool tips, when visible, will be Gray.
+The tool tips will have a border generated around them, which is 2 pixels thick and is a solid black shade.
+Between the border and the contents of the tool tip, there will be a 2 pixel padding space in order to stop the
+tool tip from looking to cluttered together.
+The text will not have a decoration.
+Between the tool tip and other elements, there must be a 5 pixel wide and 15 pixel high margin in order to avoid 
+the user interface from getting cluttered.
+The text within the tool tip will be 16 pixels big and will be in the font Arial.
+Instead of having the traditional mouse cursor, the mouse will be using the 'pointer' model instead.
+The border's edges will be rounded by 5 pixels in order to give the border an overall slimmer look.
+The tool tip will be 25% of the overall web browser's width. This means that the size of the tool tip will change
+depending on how wide the web browser window is.
+*********************************************************************************************************************/
+			
+			.masterTooltip {
+				display:none;
+				background-color: gray;
+				border: 2px solid #444422;
+				padding: 2px;
+				text-decoration: none;
+				/*display: inline-block;*/
+				margin: 5px 15px;
+				font: 16px arial;
+				cursor: pointer;
+				border-radius: 5px;
+				width: 25%;
+			}
+			
+/*********************************************************************************************************************
+-------------The wrapper id - used as a layer that can be put over the camo background to help visibility-------------
+
+The wrapper has a 2 pixel thick border that is a solid black colour. Because it is solid, it is not transparent.
+The wrapper is 1000 pixels wide and 12350 pixels high.
+The margin has been set to 20 pixels wide, but the web browser will automatically determine how many pixels high
+the margin should be.
+The text of the wrapper, even though there isn't any, would be aligned to the left side of the screen.
+The background colour has been set to a military green-gray colour.
+*********************************************************************************************************************/
+			
+			#wrapper {
+				border: 2px solid black;
+				width: 1000px;
+				height: 1250px;
+				margin: 20px auto;
+				text-align: left;
+				background: #aaaa55;
+			}
+			
+			

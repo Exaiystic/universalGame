@@ -1,0 +1,213 @@
+<!-------------------------------------------------------------------------------------------------
+Current code in the tryit editor:
+https://www.w3schools.com/code/tryit.asp?filename=FKLK2OJELGV8
+This can be used if you would like to test a new feature
+-------------------------------------------------------------------------------------------------->
+
+<!-------------------------------------------------------------------------------------------------
+Line 24 states to the web browser that the document type is "html", also known as hyper text mark-up
+	language.
+Line 25 contains everything within the document.
+Line 26 states the "head" tag, in my code, I have used this tag mainly for implementing external 
+	resources such as libraries, styling, and JavaScript. This is closed at line 32.
+	
+Line 28 is telling the code where it can access a css file which will make the page look a lot nicer.
+Line 29 and 30 load libraries "AngularJS" and "jQuery" that are hosted by the google api. They are
+	needed in order to add functionality to the game.
+Line 31 and 32 are both needed in order to get access to the bootstrap library, even though I do not
+	use this library in my code.
+Line 33 states that the title, which will display in the tab above the url, is called "Military Clicker"
+
+Line 35 closes the head tag.
+-------------------------------------------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<link rel = "stylesheet" type = "text/css" href = "gameStyle v7-4.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>Military Clicker</title>
+		
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+		
+	</head>
+	
+	<!---------------------------------------------------------------------------------------------
+	Line 59 calls the body tag. Everything inside of this is part of the main section of the page,
+		hence why it is called "body".
+		
+	Lines 61 to 63 generate a link to a "How to play" page, the colour of this link is white so that
+		it can be seen against the background. The link opens in a new window.
+		
+	Line 65 groups the buttons, for both the clicker and the upgrades, into a div tag. However, the
+		tag has been assigned an angular app name of "Mil_Click". This is so that the angular
+		code used later on is able to refer to this div tag successfully.
+	Line 66 groups the items within the already-called div tag into a second div tag, which is within
+		the first div tag. This is done so that the angular code can also refer to this div tag
+		which has been named "Ctrl".
+	The last div is made on line 67, which has been aligned to the centre of the page.
+	Line 68 displays a header which has been set to display the amount of points that the player
+		has. The amount of points will be rounded to 0 decimal numbers in order to stop the
+		game from displaying any non-whole numbers as it is not logical to have a fraction of
+		trained soldier.
+	Line 69 generates a button that aesthetically looks like a soldier. Pressing the button executes
+		a function which adds a point onto the player's soldier count.
+	----------------------------------------------------------------------------------------------->
+	
+	<body>
+	
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	
+	<div class="container">
+		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+		  <a class="navbar-brand" href="#">Military Clicker</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" href="homePage.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="How to play HTML.html">How to play</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="reportIssue.html">Report an issue</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="login.html">Log in</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="signup.html">Sign Up</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+		
+		<div ng-app="Mil_Click" id="wrapper">
+			<div ng-controller="Ctrl"> 
+				<div align="center">
+					<h1 id="Counter"><b><u>You have {{clickNumber | number : 0}} trained soldiers</u></b></h1>
+					<button id="clicker" ng-click="buttonclick()"><img src="Soldier2.png"></button>	
+					
+	<!---------------------------------------------------------------------------------------------
+	Line 87 creates a header which displays "Upgrades", it has the id of "Menu"
+	
+	Lines 89 to 136 generates five buttons which are used in order to buy the five upgrades:
+		-Obstacle Course
+		-Firing Range
+		-Propaganda
+		-Media Censorship
+		-Invade a Country
+		When the player clicks on one of the buttons, a price is took away from the player's point
+		balance, as well as giving them the upgrade and doubling the cost for the another upgrade.
+		If the player does not have enough points in order to buy an upgrade, the button for that
+		upgrade will be disabled. The buttons display a tooltip when the player hovers his/her
+		mouse over the button.
+	---------------------------------------------------------------------------------------------->
+					
+					<h1 id="Menu">Upgrades:</h1><br>
+					
+						<button class="upgrades" id="obstacleCourse"
+							ng-click="purchaseObstacleCourse()"
+							ng-disabled="obstacleCourseCost > clickNumber">
+						Obstacle Course - {{obstacleCourseCost}}</button>
+						<div id="obstacleCourseTooltip" class="masterTooltip">
+							Buy an obstacle course which can help train soldiers over time
+							<br>
+							Trains soldiers at a slow rate
+						</div><br>
+						
+						<button class="upgrades" id="firingRange"
+							ng-click="purchaseFiringRange()"
+							ng-disabled="firingRangeCost > clickNumber">
+						Firing Range - {{firingRangeCost}}</button>
+						<div id="firingRangeTooltip" class="masterTooltip">
+							Buy a firing range to further train soldiers over time
+							<br>
+							Trains soldiers quicker than an obstacle course
+						</div><br>
+						
+						<button class="upgrades" id="propaganda"
+							ng-click="purchasePropaganda()"
+							ng-disabled="propagandaCost > clickNumber">
+						Propaganda - {{propagandaCost}}</button>
+						<div id="propagandaTooltip" class="masterTooltip">
+							Encourages civilians to join your army
+							<br>
+							People join your army quicker than they can be trained
+						</div><br>
+						
+						<button class="upgrades" id="mediaCensorship"
+							ng-click="purchaseMediaCensorhsip()"
+							ng-disabled="mediaCensorshipCost > clickNumber">
+						Media Censorship - {{mediaCensorshipCost}}</button>
+						<div id="mediaCensorshipTooltip" class="masterTooltip">
+							Makes the community view your army more positively, making them more likely to join
+							<br>
+							More people will join your army if more people like it
+						</div><br>
+						
+						<button class="upgrades" id="invadeCountry"
+							ng-click="purchaseInvadeCountry()"
+							ng-disabled="invadeCountryCost > clickNumber">
+						Invade a country - {{invadeCountryCost}}</button>
+						<div id="invadeCountryTooltip" class="masterTooltip">
+							Invade a country and take it's civilians as it's own
+							<br>
+							The quickest way to build an army
+						</div>
+						
+	<!---------------------------------------------------------------------------------------------
+	Line 155 creates another div which will be used for displaying statistics about the user's current
+		session.
+	Line 156 creates a header which displays "Statistics"
+	Line 157 to 161 informs the user about how many times the player has bought a certain upgrade.
+		It is done by telling the browser to display the num value of the upgrade, which was
+		originally used in order to determine how many points will be given to the player over
+		a period of time. The text has been told to be displayed in a strong bold format.
+		
+	Lines 164 to 169 close all of the div tags that have not been closed yet.
+	
+	Line 167 imports the game's scripts and functionality from an external JavaScript file.
+	
+	The body and html tags are closed on lines 171 and 173.
+	---------------------------------------------------------------------------------------------->
+						
+					<div>
+						<h1 id="statistics">Statistics:</h1>
+						<p><strong>Obstacle courses owned: {{numObstacleCourse}}</strong></p>
+						<p><strong>Firing ranges owned: {{numFiringRange}}</strong></p>
+						<p><strong>Level {{numPropaganda}} propaganda owned</strong></p>
+						<p><strong>Level {{numMediaCensorship}} censorship owned</strong></p>
+						<p><strong>Invaded {{numInvadeCountry}} countries</strong></p>
+					</div>
+				</div>
+			</div>
+		
+			<script src="gameJava v7-4.js"></script>
+
+		</div>
+		
+	</body>
+		
+</html>

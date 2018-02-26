@@ -1,0 +1,175 @@
+<!-------------------------------------------------------------------------------------------------------
+ What we are doing within these first few lines of code is setting up the document.
+ The first thing that we are doing is stating the type of document that this file is,
+ which is html, therefore, we state that the document type is html.
+
+ Whilst opening the html tag, which is needed at the start of every html file, as well as to be
+ closed at the end of every html file, we might as well set the language of the document,
+ therefore the user's web browser will not have to automatically detect the language - as a web
+ browser's function may not be accurate.
+--------------------------------------------------------------------------------------------------------->
+<!doctype html>
+<html lang="en">
+
+<!--------------------------------------------------------------------------------------------------------
+ The next set of lines are embedded within the head tag. The head tag is used for storing 'metadata', 
+ which means data about data. In this case, I use the head tag as a container for storing external 
+ css styling which I will be using throughout this web page, as well as adding two meta tags which are 
+ needed for bootstrap to work - a third party framework which is also used throughout this document.
+ 
+ I have also added my own style sheet, which can help keep my military theme consistent accross 
+ multiple web pages. Lastly, the title has been set to 'Welcome to Military Clicker', which will be 
+ displayed on the tab of the page.
+--------------------------------------------------------------------------------------------------------->
+
+  <head>
+	<link rel="stylesheet" href="homePage.css">
+	
+   <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	
+    <title>Welcome to Military Clicker!</title>
+  </head> 
+  
+<!---------------------------------------------------------------------------------------------------------
+ Everything within the body tag of the html document is part of the main section. The first few lines 
+ that are within the body tag however are lines that import scripts from external libraries, such as 
+ jQuery, Popper.js and Bootstrap.js.
+---------------------------------------------------------------------------------------------------------->
+
+  <body>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	
+<!---------------------------------------------------------------------------------------------------------
+ The navigation bar for the webpage. The navbar was made using the bootstrap 4 framework; bootstrap 4 is 
+ a framework of CSS styled elements that have been given their own classes. 
+ This allows for bootstrap users to call already-styled elements simply by stating an element class. 
+		 
+ The navbar itself is present on every webpage and can scale based on the browser resolution. 
+ The navigation bar is a container for links that, when clicked on, take the user to another web page, 
+ based on which link they have clicked on.
+---------------------------------------------------------------------------------------------------------->
+	<div class="container">
+		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+		  <a class="navbar-brand" href="#">Military Clicker</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="How to play HTML.html">How to play</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="reportIssue.html">Report an issue</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="login.html">Log in</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="signup.html">Sign Up</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+	
+<!---------------------------------------------------------------------------------------------------------
+ The following segment is the main portion of the web page - it is where the main text of this page will 
+ be. The text is styled by having it wrapped inside of a div with an appropriate id of 'wrapper'. With 
+ the main content within this div, I can style the main content by simply styling the div, instead of 
+ having to style every independent elements. Of course, in some places, it is simply better to style 
+ independent elements.
+---------------------------------------------------------------------------------------------------------->
+	
+	<div class="container">
+		<div id="wrapper" class="col-">		
+			<header id="topHeader" class="col-">
+				<h1>Welcome to my game!</h1>
+			</header>
+			<section id="mainSection" class="col-">
+				<article class="col-">
+					<header class="col-">
+						<hgroup class="col-">
+							<h1 id="mainSectionHeader" class="col-">Introduction</h1>
+						</hgroup>
+					</header>
+					<p class="col-">
+						Military Clicker is a spin-off version of the popular game "Cookie Clicker",
+						the game features similar elements to Cookie Clicker, as well as many other 
+						games within the idle genre, however, this game has a twist of that you are 
+						getting a bigger army with each click.
+					</p><p class="col-">
+						The aim of the game is to build the biggest army known to mankind. You can 
+						achieve this by training more and more soldiers, invading countries and 
+						buying better equipment for your soldiers to train with. If you would like 
+						to find out more about Military Clicker, you can visit the 'How to play' page.
+					</p>
+					<img class="centeredImage" src="gameFull.png" class="col-"></img>
+				</article>
+				
+				<article class="col-">
+					<header class="col-">
+						<hgroup class="col-">
+							<h1 id="mainSectionHeader" class="col-">Contact Info</h1>
+						</hgroup>
+					</header>
+					<p class="col-">
+						Should you come across a bug that you would like to report, you can contact me 
+						for further analysis:<br>
+						Email: <a href="#" style="color: black;">militaryclickersupport@militaryclicker.com</a></p><p>
+						For business purposes, use the following email:<br>
+						<a href="#" style="color: black;">militaryclickerbusiness@militaryclicker.com</a>
+					</p>
+				</article>
+				
+				<article class="col-">
+					<header class="col-">
+						<hgroup class="col-">
+							<h1 class="col-">Terms and Conditions</h1>
+						</hgroup>
+					</header>
+					<p class="col-">
+						By playing this game, you agree to play fairly without cheating. This can include 
+						hacking the amount of soldiers you have, speeding up the game's time, and other 3rd 
+						party methods of cheating.<br> You are also to not abuse exploits and bugs that are 
+						within the current iteration of the game in order to progress and/or gain an advantage.<br>
+						The game was made by Thomas Broughton only; all aspects of the game, apart from the 
+						background, was made by Thomas Broughton. The camouflage background was taken from google 
+						images, with the specific source being watermarked on the background itself. The current 
+						soldier sprite is temporary art made by an unknown artist, which is soon to be replaced 
+						by art under Thomas Broughton. Until all resources are made by the original devs of the 
+						game, Military Clicker will not be monetised.<br> Should the game be publicly mentioned, 
+						it is not needed to disclose who the creator of the game is, but in the case that the game 
+						is publicly credited, all credits should go to Thomas Broughton and nobody else.
+					</p>
+					  <div class="form-check">
+						<input type="checkbox" class="form-check-input" id="termsConditionsCheck">
+						<label class="form-check-label" for="termsConditionsCheck">I have read and agree to the above terms and conditions</label>
+					  </div>
+				</article>
+			</section>
+			
+			<footer id="theFooter" class="col-">
+				<button id="gameButton"><a href="Thomas Broughton Game Version 7-7.html" style = "color: black">I'm ready to play!</a></button>
+			</footer>
+		</div>
+	</div>
+  
+  </body>
+</html>

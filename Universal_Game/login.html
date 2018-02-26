@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="loginSignup.css"></link>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+    <title>Log into Military Clicker</title>
+	
+	<script>
+		<!-- Toggle showing password within the log in form -->
+		function togglePassword() {
+			var pass = document.getElementById("passwordField");
+			if (pass.type === "password") {
+				pass.type = "text";
+			} else {
+				pass.type = "password";
+			}
+		}
+		
+		<!-- When logging in, the page will display a message using the user's details -->
+		function loginNotify() {
+			var username = document.getElementById("usernameField").value;
+			var password = document.getElementById("passwordField").value;
+			if (username.length < 1 || password.length < 1){
+				alert("Please enter both a username and a password.");
+				return false;
+			} else {
+				alert(username + " successfully logged in.");
+				return true;
+			}
+		}
+    </script>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+	<div class="container">
+		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+		  <a class="navbar-brand" href="#">Military Clicker</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="homePage.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="How to play HTML.html">How to play</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="reportIssue.html">Report an issue</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">Log in <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="signup.html">Sign Up</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+
+	<div id="wrapper">		
+		<header id="topHeader">
+			<h1>Log into Military Clicker</h1>
+		</header>
+		<section id="mainSection">
+			
+			<!------------------------------------------------------------------------------------>
+			<!-- Log in form -->
+			<!-- Need to add validation that all fields are filled in before the notification is 
+				 given -->
+			<article>
+				<header>
+					<hgroup>
+						<h1 id="mainSectionHeader">Log In</h1>
+					</hgroup>
+				</header>
+				<p>
+					Logging into Military Clicker allows you to save your data and continue from where 
+					you left off between devices that you are logged in to.
+				</p>
+				
+				<div class="form-group">
+					<form class="loginForm" name="loginForm">
+						<label for="usernameField">Username:</label>
+						<input type="text" name="username" class="form-control" id="usernameField" placeholder="Username..."></input>
+						<br>
+						
+						<!-- Password field with show password button -->
+						<label for="passwordField">Password: </label>
+						<div class="input-group mb-3">
+							<input type="password" class="form-control" id="passwordField" placeholder="Password..."/>
+							<div class="input-group-append">
+								<button class="btn btn-outline-dark" type="button" onclick="togglePassword()">Show Password</button>
+							</div>
+						</div>
+					</form>
+					
+					<!-- PROBLEM: Both submit buttons attempt to submit both forms at once. Cannot add the required
+						 attribute to the forms because of this. They will have to be buttons for now -->
+					<input type="submit" class="btn btn-block" id="submitButton" onclick="return loginNotify()"/>
+				</div>
+			</article>
+		</section>
+	</div>
+  </body>
+</html>

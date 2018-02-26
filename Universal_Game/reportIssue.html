@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" href="reportIssue.css">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <title>Report an Issue</title>
+	<script>
+	//  Subroutine JavaScript functions - they are only executed when they are called within the 
+	//  code.
+	
+	//  When user clicks on the text field for specifying an answer, the drop down automatically
+	//  selects other in case it isn't already selected.
+	//  Function for the device form
+		function deviceChange() {
+			document.getElementById("deviceDrop").value="other";
+		}
+	
+	//  Function for the browser form
+		function browserChange() {
+			document.getElementById("browserDrop").value="other";
+		}
+	
+	//  Function for the problem form
+	//  When the user inputs something in the 'specify where the problem is' field, the 
+	//  web browser will automatically check the 'other' check box.
+		function problemAdd() {
+			document.getElementById("otherCheck").checked="true";
+		}
+		
+	//  When the user inputs a value into the text field, but then changes the drop down option, 
+	//  the input in the text field will be deleted.
+	//  Function for the device form
+		function deviceRemoveOther() {
+			document.getElementById("deviceOther").value=" ";
+		}
+		
+	//  Function for the browser form
+		function browserRemoveOther() {
+			document.getElementById("browserOther").value=" ";
+		}
+	</script>
+  </head>
+<body>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+<!--- The navbar --->
+	<div class="container">
+		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+		  <a class="navbar-brand" href="#">Military Clicker</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="homePage.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="How to play HTML.html">How to play</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="reportIssue.html">Report an issue <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="login.html">Log in</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="signup.html">Sign Up</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+
+<!--- The wrapper element --->	
+	<div id="wrapper">		
+		<header id="topHeader">
+			<h1>Report an Issue</h1>
+		</header>
+		<section id="mainSection">
+			<article>
+				<header>
+					<hgroup>
+						<h1 id="mainSectionHeader"></h1>
+					</hgroup>
+				</header>
+				<p>
+					Military Clicker has not been in development for a long time, this means that 
+					bugs, glitches and exploits are expected. By reporting any found issues, you 
+					are helping me fix this game and improve everybody's playing experience.
+				</p>
+				
+				<div class="form-group">
+					<form>
+					<!--- Form regarding what device the user is using in order to access the game --->
+						<p>What type of device are you using in order to access the game?</p>
+						<select id="deviceDrop" class="form-control-lg" style="width: 250px; background: #77773c; border: 2px solid #42413D;" onchange="deviceRemoveOther()">
+							<option>PC</option>
+							<option>Mobile</option>
+							<option value="other">Other</option>
+						</select><br>
+						<label for="deviceOther">If you selected other, please specify:</label>
+						<input
+							onfocus="deviceChange()" type="text" id="deviceOther" class="form-control-lg" style="background: #77773c; border: 2px solid #42413D;"></input><br>
+						
+					<!-- Form regarding what web browser they are using in order to access the game --->
+						<p>What web browser are you using in order to access the game?</p>
+						<select id="browserDrop" class="form-control-lg" style="width: 250px; background: #77773c; border: 2px solid #42413D;" onchange="browserRemoveOther()">
+							<option>Microsoft Edge</option>
+							<option>Internet Explorer</option>
+							<option>Google Chrome</option>
+							<option>Firefox</option>
+							<option value="other">Other</option>
+						</select><br>
+						<label for="browserOther">If you selected other, please specify:</label>
+						<input
+							onfocus="browserChange()" type="text" id="browserOther" class="form-control-lg" style="background: #77773c; border: 2px solid #42413D;" onfocus="deviceSpecify()"></input><br>
+		
+						<p>What element(s) within the game is the problem found in?</p>
+						<div class="form-check">
+							<input class="checkBox form-check-input" type="checkbox" value="clicker" id="clickerCheck"></input>
+								<label class="form-check-label" for="clickerCheck">The Clicker</label><br>
+							<input class="checkBox form-check-input" type="checkbox" value="upgrade" id="upgradeCheck"></input>
+								<label class="form-check-label" for="upgradeCheck">The Upgrades</label><br>
+							<input class="checkBox form-check-input" type="checkbox" value="navigation" id="navigationCheck"></input>
+								<label class="form-check-label" for="navigationCheck">The top menu</label><br>
+							<input class="checkBox form-check-input" type="checkbox" value="stat" id="statCheck"></input>
+								<label class="form-check-label" for="statCheck">The statistics/counter</label><br>
+							<input class="checkBox form-check-input" type="checkbox" value="other" id="otherCheck"></input>
+								<label class="form-check-label" for="otherCheck">Other</label><br>
+							<!--- Pick off here; add the other functions and style --->
+							<label for="problemOther">If you selected other, please specify:</label>
+							<input
+								onfocus="problemAdd()" type="text" id="problemOther" class="form-control-lg" style="background: #77773c; border: 2px solid #42413D;"/>
+						</div>
+						<p>Type in below what the problem is.</p>
+						<textarea class="form-control-lg" style="width: 750px; background: #77773c; border: 2px solid #42413D;"></textarea>
+						<br><input type="submit" id="submitButton"></input>
+					</form>
+				</div>
+			</article>
+		</section>
+		
+		<footer id="theFooter">
+		</footer>
+	</div>
+  
+  </body>
+</html>
