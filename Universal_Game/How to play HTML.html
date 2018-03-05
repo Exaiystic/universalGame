@@ -1,6 +1,27 @@
-<!--Basic layout for a website page-->
+<!-------------------------------------------------------------------------------------------------------
+ What we are doing within these first few lines of code is setting up the document.
+ The first thing that we are doing is stating the type of document that this file is,
+ which is html, therefore, we state that the document type is html.
+
+ Whilst opening the html tag, which is needed at the start of every html file, as well as to be
+ closed at the end of every html file, we might as well set the language of the document,
+ therefore the user's web browser will not have to automatically detect the language - as a web
+ browser's function may not be accurate.
+--------------------------------------------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
+
+<!--------------------------------------------------------------------------------------------------------
+ The next set of lines are embedded within the head tag. The head tag is used for storing 'metadata', 
+ which means data about data. In this case, I use the head tag as a container for storing external 
+ css styling which I will be using throughout this web page, as well as adding two meta tags which are 
+ needed for bootstrap to work - a third party framework which is also used throughout this document.
+ 
+ I have also added my own style sheet, which can help keep my military theme consistent accross 
+ multiple web pages. Lastly, the title has been set to 'How to play Military Clicker', which will be 
+ displayed on the tab of the page.
+--------------------------------------------------------------------------------------------------------->
+
 	<head>
 		<title>How to play Military Clicker</title>
 		
@@ -14,46 +35,95 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	</head>
 	
+<!---------------------------------------------------------------------------------------------------------
+ Everything within the body tag of the html document is part of the main section. The first few lines 
+ that are within the body tag however are lines that import scripts from external libraries, such as 
+ jQuery, Popper.js and Bootstrap.js.
+---------------------------------------------------------------------------------------------------------->
+	
 	<body>
 	
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+		
+<!---------------------------------------------------------------------------------------------------------
+ The navigation bar for the webpage. The navbar was made using the bootstrap 4 framework; bootstrap 4 is 
+ a framework of CSS styled elements that have been given their own classes. 
+ This allows for bootstrap users to call already-styled elements simply by stating an element class. 
+		 
+ The navbar itself is present on every webpage and can scale based on the browser resolution. 
+ The navigation bar is a container for links that, when clicked on, take the user to another web page, 
+ based on which link they have clicked on.
+---------------------------------------------------------------------------------------------------------->
 	
-	<div class="container">
-		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
-		  <a class="navbar-brand" href="#">Military Clicker</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
+		<div class="container">
+			<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+			  <a class="navbar-brand" href="#">Military Clicker</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
 
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav">
-			  <li class="nav-item">
-				<a class="nav-link" href="homePage.html">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link active" href="How to play HTML.html">How to play <span class="sr-only">(current)</span></a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="reportIssue.html">Report an issue</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="login.html">Log in</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="signup.html">Sign Up</a>
-			  </li>
-			</ul>
-		  </div>
-		</nav>
-	<div>
-	
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link" href="homePage.html">Home</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" href="How to play HTML.html">How to play <span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="reportIssue.html">Report an issue</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="login.html">Log in</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="signup.html">Sign Up</a>
+				  </li>
+				</ul>
+			  </div>
+			</nav>
+		<div>
+		
+<!---------------------------------------------------------------------------------------------------------
+ The following segment is the main portion of the web page - it is where the main text of this page will 
+ be. The text is styled by having it wrapped inside of a div with an appropriate id of 'wrapper'. With 
+ the main content within this div, I can style the main content by simply styling the div, instead of 
+ having to style every independent elements. Of course, in some places, it is simply better to style 
+ independent elements.
+ 
+ The first few lines set up both the wrapper div, as well as a div called 'container', which will act 
+ as a place for storing elements that can be manipulated with bootstrap - which is most of these elements.
+ 
+ The next lines create a header that will be at the top of the wrapper. The header tag has been given an 
+ id so that the content can be externally styled to be made bold, as well as give the tag a different 
+ background colour. The header tag is then closed so that no other element is unintentionally given the 
+ same styling as the header itself.
+ 
+ After the header is the section tag housing an article tag. The section tag make the main content that 
+ will be within the div wrapper, whereas the article tag acts like a paragraph - a set of content that 
+ is just part of the main page. The section tag has been given an id of 'mainSection' in order to indicate 
+ that everything within this tag will be part of the main section. The id itself has styling attached to 
+ it that basically helps space out the content around it, in order to make the web page look less 
+ cluttered. Additionally, the article section has styling attached to it which makes the set content 
+ within the tag look as if it was inside of a box - this was styled by giving the element a border, and a 
+ different shade of green for a background.
+ 
+ Each article is given it's own header (and consistently styled) in order to act as a subtitle. Of course, 
+ the article also includes one or two paragraphs worth of content before the article tag is closed, and 
+ another one is opened for more content.
+ 
+ At the end of the section tag, there is a check box which the user will tick if he/she accept the terms 
+ and conditions. Furthermore, before the end of the div, there is a footer. Despite the footer being 
+ empty, it is kept there so that the space management of the div does not become misaligned.
+---------------------------------------------------------------------------------------------------------->
+		
 		<div id="wrapper">		
 			<header id="topHeader">
 				<h1>How to play Military Clicker</h1>

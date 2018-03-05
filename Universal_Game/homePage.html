@@ -95,6 +95,36 @@
  the main content within this div, I can style the main content by simply styling the div, instead of 
  having to style every independent elements. Of course, in some places, it is simply better to style 
  independent elements.
+ 
+ The first few lines set up both the wrapper div, as well as a div called 'container', which will act 
+ as a place for storing elements that can be manipulated with bootstrap - which is most of these elements.
+ 
+ The 'col-' tag which is seen in lots of the elements placed inside of the container is there so that the 
+ web browser will scale elements downward in size correctly when the window resolution shrinks. This can 
+ make the web page look different on different resolutions, but will make the content easier to read on 
+ smaller window sizes.
+ 
+ The next lines create a header that will be at the top of the wrapper. The header tag has been given an 
+ id so that the content can be externally styled to be made bold, as well as give the tag a different 
+ background colour. The header tag is then closed so that no other element is unintentionally given the 
+ same styling as the header itself.
+ 
+ After the header is the section tag housing an article tag. The section tag make the main content that 
+ will be within the div wrapper, whereas the article tag acts like a paragraph - a set of content that 
+ is just part of the main page. The section tag has been given an id of 'mainSection' in order to indicate 
+ that everything within this tag will be part of the main section. The id itself has styling attached to 
+ it that basically helps space out the content around it, in order to make the web page look less 
+ cluttered. Additionally, the article section has styling attached to it which makes the set content 
+ within the tag look as if it was inside of a box - this was styled by giving the element a border, and a 
+ different shade of green for a background.
+ 
+ Each article is given it's own header (and consistently styled) in order to act as a subtitle. Of course, 
+ the article also includes one or two paragraphs worth of content before the article tag is closed, and 
+ another one is opened for more content.
+ 
+ At the end of the section tag, there is a check box which the user will tick if he/she accept the terms 
+ and conditions. Furthermore, before the end of the div, there is a footer. Despite the footer being 
+ empty, it is kept there so that the space management of the div does not become misaligned.
 ---------------------------------------------------------------------------------------------------------->
 	
 	<div class="container">
@@ -170,6 +200,10 @@
 			</footer>
 		</div>
 	</div>
+  
+<!---------------------------------------------------------------------------------------------------------
+Closing the body and html tag to indicate the end of the document.
+---------------------------------------------------------------------------------------------------------->
   
   </body>
 </html>

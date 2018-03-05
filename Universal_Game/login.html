@@ -1,5 +1,27 @@
-<!doctype html>
+<!-------------------------------------------------------------------------------------------------------
+ What we are doing within these first few lines of code is setting up the document.
+ The first thing that we are doing is stating the type of document that this file is,
+ which is html, therefore, we state that the document type is html.
+
+ Whilst opening the html tag, which is needed at the start of every html file, as well as to be
+ closed at the end of every html file, we might as well set the language of the document,
+ therefore the user's web browser will not have to automatically detect the language - as a web
+ browser's function may not be accurate.
+--------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
 <html lang="en">
+
+<!--------------------------------------------------------------------------------------------------------
+ The next set of lines are embedded within the head tag. The head tag is used for storing 'metadata', 
+ which means data about data. In this case, I use the head tag as a container for storing external 
+ css styling which I will be using throughout this web page, as well as adding two meta tags which are 
+ needed for bootstrap to work - a third party framework which is also used throughout this document.
+ 
+ I have also added my own style sheet, which can help keep my military theme consistent accross 
+ multiple web pages. Lastly, the title has been set to 'Log into Military Clicker', which will be 
+ displayed on the tab of the page.
+--------------------------------------------------------------------------------------------------------->
+  
   <head>
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="loginSignup.css"></link>
@@ -12,6 +34,34 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
     <title>Log into Military Clicker</title>
+	
+<!--------------------------------------------------------------------------------------------------------
+The script, that is entered below, is used in order to store client-side processes and actions - known as 
+JavaScript. When a function is called, the web browser will be looking within the script tag for a 
+function with a matching name in order to execute it.
+
+The first function, named togglePassword, is a function that is called when the user clicks the 'Toggle 
+Password' button. The function's purpose is to toggle the password entry field's type from a password 
+to a text based entry field, or the other way around. What this ultimately does is either display what
+the entered value is, or to hide it. This is done by getting the meta data (data about data) of the 
+input field, and storing it in a variable - a storage box that can be overwritten and refreshed upon the 
+web page being reloaded. The variable, with the meta data stored within it, can then be ran through a 
+conditional statement saying that: "if the field type is set to 'password', then the type should be 
+changed to 'text'". This also goes for the other way around - if the field type is set to 'text', the 
+function should change the type to 'password'.
+
+The next function is called loginNotify. The function has two purposes: to verify that the username and 
+password fields have been filled in, and to notify the user that they have been successfully logged in 
+by displaying their user name within a message. The function works by storing the input data from both 
+the login entry field, and the password entry field in two variables (one for the user name and one for 
+the password). After the input values have been stored, the script runs a conditional statement that 
+states that if the length of both the user name and password variables are smaller than one, the web 
+browser will tell the user to enter both a user name and password, as well as to leave the page as it is, 
+meaning that the page will not refresh like it normally does when being submitted. However, the 
+conditional statement says that if the user name and password both have a length of at least one, the 
+web browser will say that the user was successfully logged in, as well as refresh the page, like what 
+would normally happen when pressing a submit button.
+--------------------------------------------------------------------------------------------------------->
 	
 	<script>
 		<!-- Toggle showing password within the log in form -->
@@ -38,6 +88,13 @@
 		}
     </script>
   </head>
+  
+<!---------------------------------------------------------------------------------------------------------
+ Everything within the body tag of the html document is part of the main section. The first few lines 
+ that are within the body tag however are lines that import scripts from external libraries, such as 
+ jQuery, Popper.js and Bootstrap.js.
+---------------------------------------------------------------------------------------------------------->
+  
   <body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,6 +102,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
+<!---------------------------------------------------------------------------------------------------------
+ The navigation bar for the webpage. The navbar was made using the bootstrap 4 framework; bootstrap 4 is 
+ a framework of CSS styled elements that have been given their own classes. 
+ This allows for bootstrap users to call already-styled elements simply by stating an element class. 
+		 
+ The navbar itself is present on every webpage and can scale based on the browser resolution. 
+ The navigation bar is a container for links that, when clicked on, take the user to another web page, 
+ based on which link they have clicked on.
+---------------------------------------------------------------------------------------------------------->
+	
 	<div class="container">
 		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
 		  <a class="navbar-brand" href="#">Military Clicker</a>
@@ -77,6 +144,39 @@
 		</nav>
 	</div>
 
+<!---------------------------------------------------------------------------------------------------------
+ The following segment is the main portion of the web page - it is where the main text of this page will 
+ be. The text is styled by having it wrapped inside of a div with an appropriate id of 'wrapper'. With 
+ the main content within this div, I can style the main content by simply styling the div, instead of 
+ having to style every independent elements. Of course, in some places, it is simply better to style 
+ independent elements.
+ 
+ The first few lines set up both the wrapper div, as well as a div called 'container', which will act 
+ as a place for storing elements that can be manipulated with bootstrap - which is most of these elements.
+ 
+ The next lines create a header that will be at the top of the wrapper. The header tag has been given an 
+ id so that the content can be externally styled to be made bold, as well as give the tag a different 
+ background colour. The header tag is then closed so that no other element is unintentionally given the 
+ same styling as the header itself.
+ 
+ After the header is the section tag housing an article tag. The section tag make the main content that 
+ will be within the div wrapper, whereas the article tag acts like a paragraph - a set of content that 
+ is just part of the main page. The section tag has been given an id of 'mainSection' in order to indicate 
+ that everything within this tag will be part of the main section. The id itself has styling attached to 
+ it that basically helps space out the content around it, in order to make the web page look less 
+ cluttered. Additionally, the article section has styling attached to it which makes the set content 
+ within the tag look as if it was inside of a box - this was styled by giving the element a border, and a 
+ different shade of green for a background.
+ 
+ Each article is given it's own header (and consistently styled) in order to act as a subtitle. Of course, 
+ the article also includes one or two paragraphs worth of content before the article tag is closed, and 
+ another one is opened for more content.
+ 
+ At the end of the section tag, there is a check box which the user will tick if he/she accept the terms 
+ and conditions. Furthermore, before the end of the div, there is a footer. Despite the footer being 
+ empty, it is kept there so that the space management of the div does not become misaligned.
+---------------------------------------------------------------------------------------------------------->
+	
 	<div id="wrapper">		
 		<header id="topHeader">
 			<h1>Log into Military Clicker</h1>
