@@ -5,3 +5,4 @@ The following files have been fully commented:
   - homePage.html
   - How to play HTML.html
   - login.html
+  - reportIssue.html
