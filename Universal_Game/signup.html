@@ -1,5 +1,27 @@
-<!doctype html>
+<!-------------------------------------------------------------------------------------------------------
+ What we are doing within these first few lines of code is setting up the document.
+ The first thing that we are doing is stating the type of document that this file is,
+ which is html, therefore, we state that the document type is html.
+
+ Whilst opening the html tag, which is needed at the start of every html file, as well as to be
+ closed at the end of every html file, we might as well set the language of the document,
+ therefore the user's web browser will not have to automatically detect the language - as a web
+ browser's function may not be accurate.
+--------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
 <html lang="en">
+
+<!--------------------------------------------------------------------------------------------------------
+ The next set of lines are embedded within the head tag. The head tag is used for storing 'metadata', 
+ which means data about data. In this case, I use the head tag as a container for storing external 
+ css styling which I will be using throughout this web page, as well as adding two meta tags which are 
+ needed for bootstrap to work - a third party framework which is also used throughout this document.
+ 
+ I have also added my own style sheet, which can help keep my military theme consistent accross 
+ multiple web pages. Lastly, the title has been set to 'Sign Up | Military Clicker', which will be 
+ displayed on the tab of the page.
+--------------------------------------------------------------------------------------------------------->
+ 
   <head>
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="loginSignup.css"></link>
@@ -13,8 +35,24 @@
 	
     <title>Sign Up | Military Clicker</title>
 	
+<!---------------------------------------------------------------------------------------------------------
+The script, that is entered below, is used in order to store client-side processes and actions - known as 
+JavaScript. When a function is called, the web browser will be looking within the script tag for a 
+function with a matching name in order to execute it.
+
+The function called 'togglePasswordAssign' is a function that when called, will either show/hide the user's 
+input password - depending on if the password was already showing. This is done through a conditional 
+statement saying that if the password was showing, it should be hidden (by changing the field type from 
+text to password) and if the password was not showing, the password would be shown (by changing the type 
+from password to plain text).
+
+Function 'signupProcess' notifies the user that he/she has successfully signed up or not. This is done by 
+getting the values of all of the form, and then analysing whether or not they are all at least one 
+character long - if even one of them is blank (less than one character long), then the browser will tell 
+the user that they need to fill in all of the fields. However, if they are at least one character long, 
+then the browser will tell the user that they have been signed up.
+---------------------------------------------------------------------------------------------------------->
 	<script>
-		<!-- Toggle showing password within the sign up form -->
 		function togglePasswordAssign() {
 			var passAssign = document.getElementById("passwordAssign");
 			if (passAssign.type === "password") {
@@ -24,7 +62,6 @@
 			}
 		}
 		
-		<!-- Validation and Signing up -->
 		function signupProcess(){
 			var username = document.getElementById("usernameAssign").value;
 			var firstname = document.getElementById("firstNameField").value;
@@ -41,6 +78,13 @@
 		}
     </script>
   </head>
+    
+<!---------------------------------------------------------------------------------------------------------
+ Everything within the body tag of the html document is part of the main section. The first few lines 
+ that are within the body tag however are lines that import scripts from external libraries, such as 
+ jQuery, Popper.js and Bootstrap.js.
+---------------------------------------------------------------------------------------------------------->
+  
   <body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -48,6 +92,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
+<!---------------------------------------------------------------------------------------------------------
+ The navigation bar for the webpage. The navbar was made using the bootstrap 4 framework; bootstrap 4 is 
+ a framework of CSS styled elements that have been given their own classes. 
+ This allows for bootstrap users to call already-styled elements simply by stating an element class. 
+		 
+ The navbar itself is present on every webpage and can scale based on the browser resolution. 
+ The navigation bar is a container for links that, when clicked on, take the user to another web page, 
+ based on which link they have clicked on.
+---------------------------------------------------------------------------------------------------------->
+	    
 	<div class="container">
 		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
 		  <a class="navbar-brand" href="#">Military Clicker</a>
@@ -84,15 +138,7 @@
 		<header id="topHeader">
 			<h1>Create a Military Clicker Account</h1>
 		</header>
-		<section id="mainSection">
-			
-			<!------------------------------------------------------------------------------------>
-			<!-- Sign up form -->
-			<!-- Need to add validation that all fields are filled in before the notification is 
-				 given -->
-			<!-- SOLUTION: Split the sign up and log in into different pages, additionally, you 
-				 can make the log in section an element within the navbar due to how little fields 
-				 there are -->
+		<section id="mainSection">	
 			<article>
 				<header>
 					<hgroup>
@@ -131,9 +177,6 @@
 							<button class="btn btn-outline-dark" type="button" onclick="togglePasswordAssign()">Show Password</button>
 						</div>
 					</div>
-					
-					<!-- PROBLEM: Both submit buttons attempt to submit both forms at once. Cannot add the required
-						attribute to the forms because of this. They will have to be buttons for now -->
 					<input type="submit" class="btn btn-block" id="signupButton" onclick="return signupProcess()"/>
 				</form>
 			</article>
