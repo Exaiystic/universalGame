@@ -6,3 +6,5 @@ The following files have been fully commented:
   - How to play HTML.html
   - login.html
   - reportIssue.html
+  - signup.html
+  - Thomas Broughton Game
