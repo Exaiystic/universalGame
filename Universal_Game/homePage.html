@@ -32,6 +32,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	
     <title>Welcome to Military Clicker!</title>
+	<script>
+		function howToPlayAlert() {
+			if (confirm("This will open the page in a new tab. Do you wish to continue?")) {
+				window.open ("How to play HTML.html");
+			}
+		}
+		
+		function gameAlert() {
+			if (confirm("This will open the page in a new tab. Do you wish to continue?")) {
+				window.open ("Thomas Broughton Game Version 7-7.html");
+			}
+		}
+		
+		function reportAlert() {
+			if (confirm("This will open the page in a new tab. Do you wish to continue?")) {
+				window.open ("reportIssue.html");
+			}
+		}
+		
+		function loginAlert() {
+			if (confirm("This will open the page in a new tab. Do you wish to continue?")) {
+				window.open ("login.html");
+			}
+		}
+		
+		function signupAlert() {
+			if (confirm("This will open the page in a new tab. Do you wish to continue?")) {
+				window.open ("signup.html");
+			}
+		}
+	</script>
   </head> 
   
 <!---------------------------------------------------------------------------------------------------------
@@ -67,27 +98,35 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="#">Home (Current)<span class="sr-only">(current)</span></a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="How to play HTML.html">How to play</a>
+				<a class="nav-link" onclick="howToPlayAlert()">How to play</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
+				<a class="nav-link" onclick="gameAlert()">The game</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="reportIssue.html">Report an issue</a>
+				<a class="nav-link" onclick="reportAlert()">Report an issue</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="login.html">Log in</a>
+				<a class="nav-link" onclick="loginAlert()">Log in</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="signup.html">Sign Up</a>
+				<a class="nav-link" onclick="signupAlert()">Sign Up</a>
 			  </li>
 			</ul>
 		  </div>
 		</nav>
 	</div>
+	
+	<!--<div class="howToPlayPopUp" class="popUp">
+		<div class="howToPlayPopUpContent">
+			<span class="close">&times;</span>
+			<p>This will exit your current page and take you to the web page about how to play the game</p>
+			<p>Are you sure you want to leave this page?</p>
+		</div>
+	</div>-->
 	
 <!---------------------------------------------------------------------------------------------------------
  The following segment is the main portion of the web page - it is where the main text of this page will 
