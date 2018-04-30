@@ -33,6 +33,45 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<script>
+	//All of the scripts below open an alert when the user clicks on one of the navbar links. This helps give the
+	//web pages a more pronounced roll over.
+		function homeAlert() {
+			if (confirm("This will open the home page in a new tab. Do you wish to continue?")) {
+				window.open ("homePage.html");
+			}
+		}
+	
+		function howToPlayAlert() {
+			if (confirm("This will open the how to play page in a new tab. Do you wish to continue?")) {
+				window.open ("How to play HTML.html");
+			}
+		}
+		
+		function gameAlert() {
+			if (confirm("This will open the game in a new tab. Do you wish to continue?")) {
+				window.open ("Thomas Broughton Game Version 7-7.html");
+			}
+		}
+		
+		function reportAlert() {
+			if (confirm("This will open the report page in a new tab. Do you wish to continue?")) {
+				window.open ("reportIssue.html");
+			}
+		}
+		
+		function loginAlert() {
+			if (confirm("This will open the login page in a new tab. Do you wish to continue?")) {
+				window.open ("login.html");
+			}
+		}
+		
+		function signupAlert() {
+			if (confirm("This will open the signup in a new tab. Do you wish to continue?")) {
+				window.open ("signup.html");
+			}
+		}
+	</script>
 	</head>
 	
 <!---------------------------------------------------------------------------------------------------------
@@ -59,37 +98,37 @@
  based on which link they have clicked on.
 ---------------------------------------------------------------------------------------------------------->
 	
-		<div class="container">
-			<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
-			  <a class="navbar-brand" href="#">Military Clicker</a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			  </button>
+	<div class="container">
+		<nav class="navbar-toggler navbar-toggleable-expand-lg navbar-light" style="background-color: #77773c">
+		  <a class="navbar-brand" href="#">Military Clicker</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
 
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav">
-				  <li class="nav-item">
-					<a class="nav-link" href="homePage.html">Home</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link active" href="How to play HTML.html">How to play <span class="sr-only">(current)</span></a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="Thomas Broughton Game Version 7-7.html">The game</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="reportIssue.html">Report an issue</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="login.html">Log in</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="signup.html">Sign Up</a>
-				  </li>
-				</ul>
-			  </div>
-			</nav>
-		<div>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link" onclick="homeAlert()">Home</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link">How to play (Current)<span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" onclick="gameAlert()">The game</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" onclick="reportAlert()">Report an issue</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" onclick="loginAlert()">Log in</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" onclick="signupAlert()">Sign Up</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
 		
 <!---------------------------------------------------------------------------------------------------------
  The following segment is the main portion of the web page - it is where the main text of this page will 
@@ -229,7 +268,7 @@
 			</aside>
 			
 			<footer id="theFooter">
-				<button id="gameButton"><a href="Thomas Broughton Game Version 7-7.html" style = "color: black">I'm ready to play!</a></button>
+				<button id="gameButton" onclick="gameAlert()">I'm ready to play!</button>
 			</footer>
 		</div>
 	</body>
