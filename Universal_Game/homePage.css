@@ -1,49 +1,50 @@
 /* main.css */
 /* Basic layout for styling */
 
+/* Universally sets all of the margin and padding values to 0. This has to be done because 
+   if not, the browser will automatically assign a default margin and padding value when no 
+   value is specified. Doing this will specify out own margin and padding value, meaning 
+   that we have more control of what the web page will look like. */
 * {
 	margin: 0px;
 	padding: 0px;
 }
-
+/* This is not used within this web page. However, when used, it will make all italic text
+   in the font 'Arial'. If Arial is not available, the font 'Verdana' will be used instead. */
 i {
 	font-family: "Arial", "Verdana"
 }
+/* This sets the background of the entire web page. The background has been set to an image
+   called 'camo.jpg'. The background has been set so that the image will be stretched in order 
+   to fit the entire screen. The background does not scroll down with the rest of the web page. */
 
 body { 
 	background: url(camo.jpg);
 	background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-footer, aside, p {
-	/* font-family: Tahoma, Verdana; */
-}
+/* This sets the text colour of text in paragraphs and headers to black. This also sets the 
+   text size to 16 pixels large. */
 
 p, h1 {
 	color: black;
 	font-size: 16px;
 }
-
-h1 {
-	/* font: bold 25px Tahoma; */
-}
-
-h2 {
-	/* font: bold 20px Tahoma; */
-}
-
-h3 {
-	/* font: bold 15px Tahoma; */
-}
+/* This sets the way that the elements would be laid to be like blocks: this means that the 
+   the elements cannot overlap each other. */
 
 header, section, footer, nav, article, hgroup {
 	display: block;
 }
+/* This makes the main section of text aligned with the middle of the web page, which can help 
+   with reading the text. */
 
 body {
 	text-align: center;
 }
+/* This makes the wrapper div have a 2 pixel thick border, as well as a 20 pixel margin between 
+   the top and bottom of the page - with the left and right sides have their spacing calculated 
+   automatically. */
 
 #wrapper {
 	border: 2px solid black;
@@ -52,6 +53,8 @@ body {
 	text-align: left;
 	background: #aaaa55;
 }
+/* This makes the top menu container a military shade of green. Additionally, it gives container
+   a space of 20 pixels between the content and the edge of the container. */
 
 #topMenu{
 	background-color: #77773c;
@@ -60,6 +63,7 @@ body {
 	/* font-family: Tahoma; */
 	color: white;
 }
+/* Lists that are within the web page will now have a five pixel padding. */
 
 li {
 	padding-top: 5px;
